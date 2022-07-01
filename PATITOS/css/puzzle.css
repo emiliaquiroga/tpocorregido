@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Angkor&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bayon&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #F6E7CB;
+}
+
+#puzzle {
+  font-family: 'Angkor', cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height:fit-content;
+  overflow: hidden;
+}
+#contenedor{
+  width: 100%;
+  margin: 0px auto;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 1 100%;
+  grid-template-rows:  repeat(3, 5 90 5);
+  grid-template-areas: "header"
+                      "puzzle"
+                      "footer ";
+}
+#contenedor #header
+  {
+    font-family: 'Bayon', sans-serif;
+    background-color: #F6E7CB;
+    color: #38723D;
+    border-radius:4px;
+    grid-area: header;
+    padding:20px;
+    padding-bottom: 0px;
+    /* grid-column-start: 1;
+    grid-column-end: -1; */
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #contenedor > div
+  {
+    background-color: #F6E7CB;
+    padding: 20px;
+    border-radius:4px;
+  }
+  header h2{
+    font-size: xx-large;
+    height: inherit;
+    margin-top: -10px;
+    margin-bottom: 0;
+    padding-left: 20px;
+  }
+
+  .nav a{
+    color: #38723D;
+    text-decoration: none;
+    font-size: larger;
+    justify-content: space-between;
+    padding: 5px;
+  }
+  
+  .nav a:hover{
+    background: #81CDB4;
+  }
+  
+  #footer {
+    font-family: 'Bayon', sans-serif;
+    background-color: #F6E7CB;
+    border-radius:4px;
+    /* grid-column: span 3; */
+    color: #38723D;
+    grid-area: footer;
+  }
+.magic {
+  background-color: #f4acb7;
+  color: rgb(255, 255, 255);
+  font-family: 'Angkor', cursive;
+  border: 0;
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 12px 20px;
+  margin: 15px;
+  cursor: pointer;
+  position: relative;
+  letter-spacing: 1px;
+  box-shadow: 0 3px #f08d9c;
+  z-index: 100;
+}
+
+.magic:focus {
+  outline: none;
+}
+
+.magic:active {
+  box-shadow: none;
+  transform: translateY(2px);
+}
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 500px;
+  width: 500px;
+  position: relative;
+  transition: 0.4s ease;
+  margin: 10px;
+}
+
+.boxes.big {
+  width: 600px;
+  height: 600px;
+}
+
+.boxes.big .box {
+  transform: rotateZ(360deg);
+  
+}
+
+.box {
+  background-image: url('../img/ducks2.jpg');
+  background-repeat: no-repeat;
+  background-size: 500px 500px;
+  position: relative;
+  height: 125px;
+  width: 125px;
+  transition: 0.4s ease;
+}
+
+.box::after {
+  content: '';
+  background-color: #ffcad4;
+  position: absolute;
+  top: 8px;
+  right: -15px;
+  height: 100%;
+  width: 15px;
+  transform: skewY(45deg);
+}
+
+.box::before {
+  content: '';
+  background-color: #ff97b7;
+  position: absolute;
+  bottom: -15px;
+  left: 8px;
+  height: 15px;
+  width: 100%;
+  transform: skewX(45deg);
+}

@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Bayon&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Bayon', sans-serif;
+  background-color:  #F6E7CB;
+}
+
+#contenedor{
+  width: 100%;
+  margin: 0px auto;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(3,auto);
+  grid-template-areas: "header header header"
+                      "cartas cartas cartas"
+                      "footer footer footer";
+}
+
+#contenedor > div
+{
+  background-color: #F6E7CB;
+  padding: 10px;
+  border-radius:4px;
+  flex: 1 100%;
+}
+
+#contenedor #header {
+  background-color: #F6E7CB;
+  color: #38723D;
+  border-radius:4px;
+  grid-area: header;
+  padding: 20px;
+  /* grid-column-start: 1;
+  grid-column-end: -1; */
+  display: flex;
+  justify-content: space-between;
+}
+  
+  header h2{
+      font-size: xx-large;
+      height: inherit;
+      margin-top: -10px;
+      margin-bottom: 0;
+      padding-left: 20px;
+    }
+
+  .nav a{
+    color: #38723D;
+    text-decoration: none;
+    font-size: larger;
+    justify-content: space-between;
+    padding: 5px;
+
+  }
+  
+  .nav a:hover{
+    background: #81CDB4;
+  }
+
+  #cartas {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    grid-area: cartas;
+    gap: 10px;
+  }
+
+  #puzzle {
+    background-color: #F6E7CB;
+    padding: 20px;
+    border-radius:4px;
+    /* grid-column: span 2; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #responsive {
+    background-color: #F6E7CB;
+    padding: 20px;
+    border-radius:4px;
+    /* grid-column: span 2; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #about {
+    background-color: #F6E7CB;
+    padding: 20px;
+    border-radius:4px;
+    /* grid-column: span 2; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+  #footer {
+    background-color: #F6E7CB;
+    padding: 10px;
+    border-radius:4px;
+    /* grid-column: span 3; */
+    color: #38723D;
+    grid-area: footer;
+    
+  }
+
+
+.card{
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box; 
+  position:relative;
+  width: 300px;
+  height: 350px;
+  margin: 20px;
+}
+
+.card .face {
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.card .front{
+  transform: perspective(600px) rotateY(0deg);
+  box-shadow: 0 5px 10px #678D58;
+}
+
+.card .front img{
+  position: absolute;
+  width: 100%;
+  height:100%;
+  object-fit: cover;
+}
+
+.card .front h3{
+  position: absolute;
+  bottom:0;
+  width:100%;
+  height: 45px;
+  line-height: 45px;
+  color: #F6E7CB;
+  background:rgba(0,0,0,.4) ;
+  text-align: center;
+}
+
+.card .back{
+  transform: perspective(600px) rotateY(180deg);
+  background: #A6C48A;
+  padding: 15px;
+  color: #ffe7ad;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 5px 10px #000;
+}
+
+.card.back .link{
+  border-top:solid 1px #ffe7ad;
+  height: 50px;
+  line-height: 50px;
+}
+
+.card .back .link a{
+  color:#ffe7ad;
+  text-decoration: none;
+}
+
+.card .back h3{
+  font-size: 30px;
+  margin-top: 20px;
+  letter-spacing: 2px;
+}
+
+.card .back p{
+   letter-spacing: 1px;
+}
+
+.card:hover .front{
+  transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back{
+  transform: perspective(600px) rotateY(360deg);
+}
+
+
+
+@media all and (max-width: 600px){
+  
+  #contenedor {
+  grid-template-areas: "header header header"
+                      "cartas cartas cartas"
+                      "footer footer footer";
+  }
+
+}
+
+@media all and (min-width: 600px){
+  
+  #contenedor {
+  grid-template-areas: "header header header"
+                      "cartas cartas cartas"
+                      "footer footer footer";
+  }
+}
+@media all and (min-width: 1200px){
+
+  #contenedor {
+  grid-template-areas: "header header header"
+                      "cartas cartas cartas"
+                      "footer footer footer";
+  }
+}
+ 
